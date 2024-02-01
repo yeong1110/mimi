@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+	--black: #373737;
+	--sect1: #ff9900;
+	--sect2: #2196F3;
+	--sect3: #e63232;
+	--sect4: #8BC34A;
+	--sect5: #8946ff;
+}
+
+* { 
+	box-sizing: border-box; 
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	transition: all 0.5s ease 0s;
+}
+
+header {
+	width: 100%;
+}
+
+header nav {
+	top: 0;
+	left: 0;
+	position: fixed;
+    z-index: 100;
+	width: 100%;
+	height: 30px;
+    padding: 0;
+	background: transparent;
+	text-align: center;
+	display: flex;
+	transition: all 0.5s ease 0s;
+}
+
+nav:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	z-index: -1;
+	background: #FF2ABB;
+	animation: progress linear;
+	animation-timeline: scroll(root);
+}
+
+@keyframes progress {
+	100% { width: 100%; }
+}
+
+
+
+/*** SECTIONS ***/
+section {
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	padding-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+
+
+#css {
+	background-color: var(--sect1);
+}
+
+#html {
+	background-color: var(--sect2);
+}
+
+#js {
+	background-color: var(--sect3);
+}
+
+#php {
+	background-color: var(--sect4);
+}
+
+#sql {
+	background-color: var(--sect5);
+}
+
+
+
+/*** SCROLLER ***/
+.scroller {
+	position: fixed;
+	width: 30px;
+	height: 50px;
+	background: radial-gradient(ellipse at 50% 33%, #fff0 0 3px, #e4b2d4 4px 100%);
+    top: calc(50vh - 15px);
+    right: 40px;
+	border-radius: 20px;
+    z-index: 1;
+}
+
+.scroller:before {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 50px;
+	background: radial-gradient(circle at 50% 33%, #fff0 0 6px, #e4b2d4 7px 100%);
+	border-radius: 20px 20px;
+	left: 0;
+	bottom: 0;
+}
+
+
+.scroller:after {
+	content: "Scroll";
+	position: absolute;
+	left: -5rem;
+	font-size: 1.65rem;
+	bottom: 0.5rem;
+	color: #e4b2d4;
+	font-weight: bold;
+}
+

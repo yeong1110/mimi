@@ -1,0 +1,448 @@
+// reset
+$c-main:#FF2ABB;
+$c-bg-1:#FF2ABB;
+$c-bg-2:#fff;
+$c-text-1:#393939;
+$c-text-2:#fff;
+
+html,body{
+    font-family: Pretendard,'Varela Round', cursive;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+img{
+    width: 100%;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.highlight{
+    position: relative;
+    display: inline-flex;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: $c-bg-1;
+        mix-blend-mode: plus-lighter;
+        animation: w-full 2.5s ease-out forwards;
+    }
+}
+//   scroll-css
+.sroll-y{
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    section{
+        position: relative;
+        scroll-snap-align: start;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: $c-bg-2;
+        color: $c-text-1;
+        &:first-of-type{
+            background: $c-bg-1;
+            color: $c-text-2;
+        }
+        h1{
+            span{
+                position: relative;
+                display: inline-flex;
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background: #393939;
+                    mix-blend-mode: plus-lighter;
+                    animation: w-full 2.5s ease-out forwards;
+                }
+            }
+        }
+        h1{
+        }
+    }
+}
+.intro{
+    h3{
+        margin-top: 60px;
+    }
+}
+.what,.why{
+    >div{
+        padding: 0 20%;
+    }
+    p{
+        font-size: 24px;
+        margin-top: 30px;
+        a{
+            padding: 16px;
+            position: relative;
+            border: 0;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background: transparent;
+            z-index: 1;
+            &:hover{
+                transition: 0.24s 0.5s linear;
+                color: #fff;
+                &::before{
+                    width: 100%;
+                }
+                &::after{
+                    height: 100%;
+                    transition-delay: 0.4s;
+                }
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 0;
+                transition: 0.24s linear;
+                background: #FF2ABB;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 0;
+                width: 100%;
+                transition: 0.24s linear;
+                background: #FF2ABB;
+                color: #fff;
+                z-index: -10;
+            }
+        }
+    }
+    h3{
+        margin-top: 30px;
+    }
+    h4,h5,h6{
+        margin-top: 10px;
+    }
+    ul{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        li{
+            position: relative;
+            font-size: 20px;
+            display: flex;
+            gap: 28px;
+            >div{
+                flex: 1;
+                min-height: 50px;
+                height: 100%;
+                padding: 20px;
+                background: $c-text-1;
+                color: $c-text-2;
+            }
+            .link{
+                position: absolute;
+                transition: 0.25s ease;
+                color: $c-text-2;
+                &:active{
+                    font-weight: 900;
+                }
+                &:focus{
+                    color: #FF2ABB;
+                }
+            }
+            div:has(img){
+                width: 300px;
+                img{
+                    transition: 0.26s ease;
+                }
+            }
+            div:has(.ani){
+                flex: 1;
+                position: relative;
+                &:focus-within{
+                    background: #e4b2d4;
+                }
+                &:hover{
+                    .hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .hover{
+                position: absolute;
+                transition: 0.25s ease;
+            }
+            #click{
+                display: none;
+            }
+            .click-pop{
+                position: absolute;
+                padding: 12px 20px;
+                background: #e4b2d4;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.25s ease;
+                bottom: 0;
+            }
+            label:has(input:checked){
+                & +.click-pop{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            .img-hover{
+                &:hover{
+                    img{
+                        content: url(https://images.unsplash.com/photo-1704137477371-bed38523c2eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDY3MDc5Mjd8&ixlib=rb-4.0.3&q=85);
+                    }
+                }
+            }
+        }
+    }
+}
+.is{
+    ul{
+        margin-top: 30px;
+    }
+    &#why-result{
+        h2{
+            margin-bottom: 30px;
+        }
+    }
+}
+.tab{
+    display: flex;
+    position: relative;
+    li{
+        display: inline-flex;
+        flex: 1;
+        label{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            background: #e4b2d4;
+            cursor: pointer;
+            &:has(input:checked){
+                background: #393939;
+                color: #fff;
+                +div{
+                    display: flex;
+                }
+            }
+            input{
+                display: none;
+            }
+        }
+        div{
+            display: none;
+            position: absolute;
+            width: 100%;
+            min-height: 100px;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: #e4b2d4;
+        }
+    }
+}
+
+.scroll-timeline {
+    margin-top: 30px;
+    height: 300px;
+    overflow: scroll;
+    scroll-timeline: --squareTimeline y;
+    /* Firefox supports the older "vertical" syntax */
+    scroll-timeline: --squareTimeline vertical;
+    position: relative;
+    border-radius: 20px;
+    &::-webkit-scrollbar{
+        display: none;
+        background: #dedede;
+    }
+    &-wrap{
+        padding: 30px 20px;
+        height: 600px;
+        background: #dedede;
+    }
+    #square {
+        background-color: deeppink;
+        width: 100px;
+        height: 100px;
+        animation-name: rotateAnimation;
+        animation-duration: 1ms; /* Firefox requires this to apply the animation */
+        animation-timeline: --squareTimeline;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.top-btn{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid #e4b2d4;
+        transition: 0.26s ease-out;
+        font-size: 20px;
+        font-weight: 600;
+        &:hover,&:active{
+            background: #e4b2d4;
+            border-color: #393939;
+        }
+    }
+}
+.has{
+    margin-top: 30px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #393939;
+    &:has(input:user-invalid){
+        background: #FF2ABB;
+    }
+    &:focus-within{
+        background: #e4b2d4;
+    }
+    label{
+        padding: 20px;
+        background: #e4b2d4;
+        &:focus-within{
+            border: 2px solid #fff;
+        }
+    }
+    input{
+        width: 100%;
+        padding: 8px 10px;
+        &:user-invalid{
+            border: 1px solid #FF2ABB;
+        }
+    }
+}
+.mimikkyu{
+    transition:0.5s ease-out;
+    [class*='line']{
+      stroke-width:0;
+      animation-name:drawOn;
+      animation-duration: 5s;
+      animation-timing-function:ease-out;
+      animation-fill-mode:forwards;
+       }
+      &-line{
+        &-1{
+          animation-delay: 0.2s;  
+        }
+        &-2{
+          animation-delay: 0.5s;  
+        }
+        &-3{
+          animation-delay: 1s;  
+        }
+        &-4{
+          animation-delay: 1s;  
+        }
+        &-5{
+          animation-delay: 1.5s;  
+        }
+        &-6{
+          animation-delay: 1.7s;  
+        }
+        &-7{
+          animation-delay: 2.3s;  
+        }
+        &-8{
+          animation-delay: 2.5s;  
+        }
+        &-9{
+          animation-delay: 2.9s;  
+        }
+        &-10{
+          animation-delay: 3.5s;  
+        }
+        &-11{
+          animation-delay: 4.1s;  
+        }
+        &-12{
+          animation-delay: 4.7s;  
+        }
+        &-13{
+          animation-delay: 5s;  
+        }
+        &-14{
+          animation-delay: 5.4s;  
+        }
+        &-15{
+          animation-delay: 6s;
+          animation-duration: 1s;
+        }
+    }
+    }
+@keyframes w-80 {
+    100%{width: 80%;}
+}
+@keyframes w-full {
+    100%{width: 100%;}
+}
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes drawOn {
+    100%{stroke-width: 3px;}
+}
+h1{
+    font-size: 80px;
+}
+h2{
+    font-size: 56px;
+}
+h3{
+    font-size: 48px;
+}
+h4{
+    font-size: 42px;
+}
+h5{
+    font-size: 36px;
+}
+h6{
+    font-size: 24px;
+}
