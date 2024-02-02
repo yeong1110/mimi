@@ -1,5 +1,5 @@
 html, body {
-  font-family: Pretendard, "Varela Round", cursive;
+  font-family: Pretendard;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
