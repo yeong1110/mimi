@@ -16,6 +16,11 @@ img {
   flex-direction: column;
 }
 
+.relative {
+  position: relative;
+  z-index: 1;
+}
+
 .highlight {
   position: relative;
   display: inline-flex;
@@ -28,7 +33,7 @@ img {
   height: 100%;
   top: 0;
   right: 0;
-  background: #FF2ABB;
+  background: #FFf;
   mix-blend-mode: plus-lighter;
   animation: w-full 2.5s ease-out forwards;
 }
@@ -52,11 +57,11 @@ img {
   justify-content: center;
   flex-direction: column;
   background: #fff;
-  color: #393939;
+  color: #111;
 }
 .sroll-y section:first-of-type {
-  background: #FF2ABB;
-  color: #fff;
+  background: #FFf;
+  color: #222;
 }
 .sroll-y section h1 span {
   position: relative;
@@ -75,7 +80,7 @@ img {
   animation: w-full 2.5s ease-out forwards;
 }
 .intro h3 {
-  margin-top: 60px;
+  margin: 60px 0;
 }
 
 .what > div, .why > div {
@@ -149,13 +154,13 @@ img {
   min-height: 50px;
   height: 100%;
   padding: 20px;
-  background: #393939;
-  color: #fff;
+  background: #111;
+  color: #222;
 }
 .what ul li .link, .why ul li .link {
   position: absolute;
   transition: 0.25s ease;
-  color: #fff;
+  color: #222;
 }
 .what ul li .link:active, .why ul li .link:active {
   font-weight: 900;
@@ -333,6 +338,46 @@ img {
   border: 1px solid #FF2ABB;
 }
 
+.graphic-change-3rd {
+  padding: 60px;
+}
+.graphic-change-3rd h2, .graphic-change-3rd h3, .graphic-change-3rd h4, .graphic-change-3rd h5, .graphic-change-3rd h6 {
+  margin-top: 20px;
+}
+.graphic-change-3rd img, .graphic-change-3rd video {
+  max-width: 1000px;
+}
+.graphic-change-3rd ul {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.graphic-change-3rd ul.why-list {
+  width: 1080px;
+  flex-wrap: wrap;
+}
+.graphic-change-3rd ul.graphic-list {
+  min-width: 1080px;
+  max-width: 1600px;
+}
+.graphic-change-3rd ul.bug-list {
+  width: 1080px;
+  flex-wrap: wrap;
+}
+.graphic-change-3rd ul.bug-list li img {
+  width: 400px;
+}
+
+.graphic-pika ul {
+  padding: 80px 0;
+  display: flex;
+}
+.graphic-pika ul li {
+  width: 150px;
+}
+
 .mimikkyu {
   transition: 0.5s ease-out;
 }
@@ -390,6 +435,14 @@ img {
   animation-duration: 1s;
 }
 
+.congratulation {
+  position: absolute;
+  font-size: 300px;
+  color: #eee;
+  font-weight: 600;
+  animation: rotateAnimation 10s linear infinite;
+}
+
 @keyframes w-80 {
   100% {
     width: 80%;
@@ -401,10 +454,7 @@ img {
   }
 }
 @keyframes rotateAnimation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -435,4 +485,8 @@ h5 {
 
 h6 {
   font-size: 24px;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 20px;
 }/*# sourceMappingURL=main.css.map */
